@@ -37,6 +37,3 @@ compPay2 = parseFloat(compPay2) * parseFloat(compHours2);
 compPay3 = parseFloat(compPay3) * parseFloat(compHours3);
 
 alert(`you made ${(compPay1 + compPay2 + compPay3)} dollar bucks!`)
-
-// A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
-// A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
