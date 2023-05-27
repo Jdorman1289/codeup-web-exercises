@@ -36,4 +36,17 @@ compPay1 = parseFloat(compPay1) * parseFloat(compHours1);
 compPay2 = parseFloat(compPay2) * parseFloat(compHours2);
 compPay3 = parseFloat(compPay3) * parseFloat(compHours3);
 
-alert(`you made ${(compPay1 + compPay2 + compPay3)} dollar bucks!`)
+alert(`you made ${(compPay1 + compPay2 + compPay3)} dollar bucks!`);
+
+//Student enrollment exercise
+let fullClass = false;
+let dateConflict = false;
+let canEnroll = fullClass === false && dateConflict === false;
+console.log(canEnroll);
+
+// A product offer exercise
+let itemsBought = 1;
+let offerExpired = false;
+let isPremiumMember = true;
+let canApplyOffer = !offerExpired && (itemsBought > 2 || isPremiumMember);
+console.log(canApplyOffer);
