@@ -73,12 +73,23 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+function calculateTip(tipPercentage, total) {
+    return (tipPercentage * total);
+}
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+let tipPercentage = prompt("What percentage would you like to tip?");
+let totalBill = prompt("How much is your total bill?");
+tipPercentage = parseFloat(`.${parseFloat(tipPercentage)}`);
+totalBill = parseFloat(totalBill);
+let answerString = `You should pay ${calculateTip(tipPercentage, totalBill)} dollar bucks for your tip!`
+alert(answerString);
 
 /**
  * TODO:
