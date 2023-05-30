@@ -1,3 +1,3 @@
-# codeup-web-exercises
+# Codeup Web Exercises
 
-This is part of my coding education journey. 
+This is a repository of coding exercises for the Codeup front-end curriculum.
