@@ -105,3 +105,9 @@ alert(answerString);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(ogPrice, discountPercent) {
+    let discount = ogPrice * discountPercent;
+    return ogPrice - discount;
+}
+console.log(applyDiscount(100,.2));
+
