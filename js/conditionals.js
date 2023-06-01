@@ -154,6 +154,9 @@ alert(`Your lucky number is ${luckyNumber}, your original bill was ${bill} but y
  * HINT: The way we prompt for a value could be improved
  */
 
+let wantToEnterANumber = confirm("Would you like to enter a number?");
+let theirEnteredNumber;
+
 function isEvenOrOdd(someNumber) {
     let answer;
     if (someNumber % 2 === 0) {
@@ -174,8 +177,7 @@ function isNegOrPos(someNumber) {
     return answer;
 }
 
-let wantToEnterANumber = confirm("Would you like to enter a number?");
-let theirEnteredNumber;
+
 if (wantToEnterANumber === true) {
     theirEnteredNumber = prompt("What's your number?");
     if (parseFloat(theirEnteredNumber)) {
@@ -188,4 +190,3 @@ if (wantToEnterANumber === true) {
 } else {
     alert("Oh, ok. That's fine I guess.");
 }
-
