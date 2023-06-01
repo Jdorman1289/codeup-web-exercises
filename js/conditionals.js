@@ -132,7 +132,7 @@ console.log(calculateTotal(3, 50));
 // Generate a random number between 0 and 6
 let luckyNumber = Math.floor(Math.random() * 6);
 
-let bill = prompt("How much is your bill?");
+let bill = parseFloat(prompt("How much is your bill?"));
 alert(`Your lucky number is ${luckyNumber}, your original bill was ${bill} but your new discounted bill is ${calculateTotal(luckyNumber, bill)}`);
 
 /**
