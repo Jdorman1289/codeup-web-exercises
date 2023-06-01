@@ -185,7 +185,7 @@ if (wantToEnterANumber === true) {
         alert(`Your number is an ${isEvenOrOdd(theirEnteredNumber)} number.`);
         alert(`You number is a ${isNegOrPos(theirEnteredNumber)} number.`);
     } else {
-        alert("That's not a number!");
+        alert(`That's not a number! You entered a ${typeof(theirEnteredNumber)}`);
     }
 } else {
     alert("Oh, ok. That's fine I guess.");
