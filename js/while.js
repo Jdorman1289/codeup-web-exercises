@@ -10,7 +10,7 @@ while (i <= 16) {
 let allCones = Math.floor(Math.random() * 50) + 50;
 
 do {
-    let conesBought = Math.floor(Math.random() * 4) + 1;
+    let conesBought = Math.floor(Math.random() * 5) + 1;
     if (conesBought > allCones) {
         console.log(`I can not sell you ${conesBought} I only have ${allCones} left!`);
         continue;
