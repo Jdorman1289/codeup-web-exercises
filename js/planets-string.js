@@ -1,6 +1,7 @@
 (function(){
     "use strict";
 
+    let inner = document.getElementById("planets");
     let planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
     let planetsBrList = [];
     let planetsUnorderdList = [];
@@ -37,4 +38,5 @@
     planetsUnorderdList.unshift("<ul>");
     planetsUnorderdList.push("</ul>");
     console.log(planetsUnorderdList.join(""));
+    inner.innerHTML = planetsUnorderdList.join("");
 })();
