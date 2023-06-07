@@ -10,12 +10,12 @@
      * Example:
      */
 
-    let person = {};
-    person.firstName = "Jesse";
-    person.lastName = "Dorman";
-
-    console.log(person.firstName);
-    console.log(person.lastName);
+    // let person = {};
+    // person.firstName = "Jesse";
+    // person.lastName = "Dorman";
+    //
+    // console.log(person.firstName);
+    // console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -24,11 +24,11 @@
      *
      * Example
      */
-    person.sayHello = function () {
-        return `Hello from ${this.firstName} ${this.lastName}!`;
-    }
-
-    console.log(person.sayHello());
+    // person.sayHello = function () {
+    //     return `Hello from ${this.firstName} ${this.lastName}!`;
+    // }
+    //
+    // console.log(person.sayHello());
 
 
     /** TODO:
@@ -54,7 +54,7 @@
         if (shopper.amount < 200) {
             console.log(`${shopper.name}: \nAmount owed: ${shopper.amount} \nno discount awarded`);
         } else {
-            const amountAfterDiscount =  parseInt(shopper.amount) - (parseInt(shopper.amount) * .12)
+            const amountAfterDiscount = parseInt(shopper.amount) - (parseInt(shopper.amount) * .12);
             console.log(`${shopper.name}: \nAmount owed: ${shopper.amount} \ndiscount awarded: 12% \nAmount owed after discount: ${amountAfterDiscount}`);
         }
     })
@@ -68,10 +68,17 @@
      * array
      *
      * Example:
-     * > console.log(books[0].title) // "The Salmon of Doubt"
-     * > console.log(books[0].author.firstName) // "Douglas"
-     * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    let books = [
+        {title: 'Book of Legend', author: {firstName: "Jesse", lastName: "Dorman"}},
+        {title: 'Book of Ryan', author: {firstName: "Ryan", lastName: "Bookman"}},
+        {title: 'Book of George', author: {firstName: "George", lastName: "Burns"}}
+    ];
+    // console.log(books[2].title);
+    // console.log(books[2].author.firstName);
+    // console.log(books[2].author.lastName);
+
 
     /**
      * TODO:
@@ -97,6 +104,9 @@
      *      ---
      *      ...
      */
+    books.forEach((book, index) => {
+        console.log(`Book # ${index} \nTitle: ${book.title} \nAuthor: ${book.author.firstName} ${book.author.lastName}`);
+    })
 
     /**
      * Bonus:
