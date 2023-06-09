@@ -105,7 +105,7 @@
      *      ...
      */
     books.forEach((book, index) => {
-        console.log(`Book # ${index} \nTitle: ${book.title} \nAuthor: ${book.author.firstName} ${book.author.lastName}`);
+        console.log(`Book # ${index + 1} \nTitle: ${book.title} \nAuthor: ${book.author.firstName} ${book.author.lastName}`);
     })
 
     /**
