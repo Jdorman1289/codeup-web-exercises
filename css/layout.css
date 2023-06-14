@@ -1,0 +1,54 @@
+/*
+    The "page wrapper" is the outermost container for the page. It mimics
+    the behavior of the body tag, but is a div so that it can be styled
+    with more flexibility than the body tag.
+*/
+.page-wrapper {
+
+}
+
+/*
+    The "container", sometimes referred to as a "section", is a container
+    element (semantic when applicable) that vertically separates different
+    areas on the page based on their purpose or topic. It can allow different
+    background colors and properties for each section that help users associate
+    content within it as belonging to the same subject.
+*/
+.container {
+
+}
+/* Combo classes to extend the container's versatility */
+
+
+/*
+    The "row" is a container element that horizontally separates its
+    children, which are usually columns. It also performs a secondary role
+    of keeping the content of the site within a reasonable width, so that
+    wider screens don't disrupt the intended layout.
+*/
+.row {
+
+}
+/* Combo classes to extend the row's versatility */
+
+/*
+    The "column" is a container element that vertically separates its
+    children, which are usually content elements. When paired with sibling columns,
+    it allows for the creation of a flexible grid system that can be used
+    to create a variety of layouts.
+*/
+.column {
+
+}
+/* Combo classes to extend the column's versatility */
+
+
+/*
+    Flexbox utilities
+*/
+
+
+
+/*
+    Misc. utility classes
+*/
