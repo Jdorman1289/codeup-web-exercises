@@ -51,6 +51,7 @@ fieldset {
 .btn-block {
     /* This element should use 100% of the width */
     width: 100%;
+    margin-left: 1em;
 }
 
 .btn {
@@ -71,7 +72,7 @@ fieldset {
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: calc(100% - 16px);
+    width: calc(100% - 8px);
     margin: .5em;
     padding: 4px 0;
 
