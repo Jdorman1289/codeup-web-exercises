@@ -20,8 +20,8 @@ body, html {
     margin: .5em;
     padding: 5px;
     border-radius: .2em;
-    color: darkcyan;
-    background-color: paleturquoise;
+    color: darkolivegreen;
+    background-color: greenyellow;
 }
 
 .message-warning {
@@ -29,8 +29,8 @@ body, html {
     margin: .5em;
     padding: 5px;
     border-radius: .2em;
-    color: darkcyan;
-    background-color: paleturquoise;
+    color: darkgoldenrod;
+    background-color: palegoldenrod;
 }
 
 .message-error {
@@ -38,6 +38,6 @@ body, html {
     margin: .5em;
     padding: 5px;
     border-radius: .2em;
-    color: darkcyan;
-    background-color: paleturquoise;
+    color: darkviolet;
+    background-color: palevioletred;
 }
