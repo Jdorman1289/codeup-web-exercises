@@ -1,11 +1,3 @@
-html body {
-    background-color: darkgray;
-    background-image: url("imgs/pexels-fwstudio-131683.jpg");
-    background-position: center;
-    background-size: auto;
-    background-repeat: repeat;
-}
-
 /* selector for id="container" */
 #container {
     margin: 50px auto;

@@ -1,3 +1,38 @@
+@font-face {
+    font-family: "yuji";
+    src: url("fonts/Yuji_Hentaigana_Akari/YujiHentaiganaAkari-Regular.ttf") format("truetype")
+}
+
+body {
+    background-color: darkgray;
+    /*background-image: url('imgs/pexels-henry-&-co-1939485.jpg');*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: "yuji", sans-serif;
+}
+
 .fancy-header {
     color: rebeccapurple;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: upper-alpha;
+}
+
+table {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+a:link {
+    color: rebeccapurple;
+}
+
+a:hover {
+    color: darkorchid;
+}
+a:visited {
+    color: purple;
 }
