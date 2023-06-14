@@ -46,6 +46,8 @@ fieldset {
 .form-label {
     /* The text of a label must be bold */
     font-weight: bold;
+    width: 100%;
+    margin-left: .5rem;
 }
 
 .btn-block {
