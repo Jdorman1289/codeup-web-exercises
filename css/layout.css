@@ -4,7 +4,9 @@
     with more flexibility than the body tag.
 */
 .page-wrapper {
-
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /*
@@ -15,10 +17,20 @@
     content within it as belonging to the same subject.
 */
 .container {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /* Combo classes to extend the container's versatility */
-
+.container.grow {
+    flex: 1 0 0;
+}
+.container.justify-center {
+    justify-content: center;
+}
+.container.justify-end {
+    justify-content: end;
+}
 
 /*
     The "row" is a container element that horizontally separates its
@@ -27,7 +39,10 @@
     wider screens don't disrupt the intended layout.
 */
 .row {
-
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
 }
 /* Combo classes to extend the row's versatility */
 
