@@ -1,0 +1,8 @@
+.row {
+    max-width: 1100px;
+}
+header.container {
+    min-height: 80px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #000;
+}
