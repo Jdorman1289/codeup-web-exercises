@@ -50,15 +50,13 @@ section.hero {
     box-shadow: 2px 2px 2px #000;
 }
 
-.column.boxPic {
-    background-color: rgb(151 151 151);
-}
 .smallText {
     font-size: 12px;
     padding: 5px;
     color: rgb(156 156 156);
     border-radius: var(--border-radius);
 }
+
 .bigText {
     font-size: 30px;
     padding: 5px;
