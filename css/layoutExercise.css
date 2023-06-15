@@ -1,8 +1,35 @@
+:root {
+    --primary: #97979797;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .row {
     max-width: 1100px;
 }
+
 header.container {
     min-height: 80px;
     background-color: #fff;
     box-shadow: 2px 2px 2px #000;
+}
+
+ul.d-flex {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    color: var(--primary);
+}
+.btn-primary {
+    padding: 5px 15px;
+    border: unset;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 5px;
 }
