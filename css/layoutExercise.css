@@ -1,5 +1,6 @@
 :root {
     --primary: #97979797;
+    --border-radius: 5px;
 }
 
 a {
@@ -25,11 +26,42 @@ ul.d-flex {
 
 .menu-item {
     color: var(--primary);
+    padding: 10px 15px;
+    transition: all ease .2s;
 }
+
+.menu-item:hover {
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: var(--border-radius);
+}
+
 .btn-primary {
     padding: 5px 15px;
     border: unset;
     background-color: var(--primary);
     color: #fff;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+}
+
+section.hero {
+    min-height: 400px;
+    background-color: rgb(236 236 236);
+    box-shadow: 2px 2px 2px #000;
+}
+
+.column.boxPic {
+    background-color: rgb(151 151 151);
+}
+.smallText {
+    font-size: 12px;
+    padding: 5px;
+    color: rgb(156 156 156);
+    border-radius: var(--border-radius);
+}
+.bigText {
+    font-size: 30px;
+    padding: 5px;
+    color: rgb(109 109 109);
+    border-radius: var(--border-radius);
 }
