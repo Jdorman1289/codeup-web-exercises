@@ -45,7 +45,7 @@ ul.d-flex {
 }
 
 section.hero {
-    min-height: 400px;
+    min-height: 500px;
     background-color: rgb(236 236 236);
     box-shadow: 2px 2px 2px #000;
 }
