@@ -19,21 +19,47 @@
 // Write a function, sumIsEqual, that takes in three inputs. The function should return
 // true if the sum of the first two inputs are equal to the third input. If any of the
 // inputs are not numbers, return false.
+//
+// function sumIsEqual(in1, in2, in3) {
+//     if (typeof in1 !== "number" || typeof in2 !== "number" || typeof in3 !== "number") {
+//         return false;
+//     } else {
+//         let sumOfIn1AndIn2 = in1 + in2;
+//         return (sumOfIn1AndIn2 === in3);
+//     }
+// }
+//
+//
+// console.log(sumIsEqual(1, 2, 3)); // returns true
+// console.log(sumIsEqual(2, 2, 4)); // returns true
+// console.log(sumIsEqual(10, 2, 12)); // returns true
+// console.log(sumIsEqual(10, false, 12)); // returns false
+// console.log(sumIsEqual('10', '2', 12)); // returns false
+// console.log(sumIsEqual('fred', 'bob', 'hello')); // returns false
+//
 
-function sumIsEqual(in1, in2, in3) {
-    if (typeof in1 !== "number" || typeof in2 !== "number" || typeof in3 !== "number") {
-        return false;
-    } else {
-        let sumOfIn1AndIn2 = in1 + in2;
-        return (sumOfIn1AndIn2 === in3);
-    }
+
+// ================================= WARM UP
+
+// Write a function, returnUserObject, that takes in three String arguments:
+// a username, password, and email. The function should return a user object with username,
+// password and email properties.
+// Assume all inputs are non-empty strings. The order of the properties does not matter.
+
+
+// {
+//     username: 'jreich',
+//         password: 'password123',
+//     email: 'jreich@email.com'
+// }
+
+function returnUserObject(userName,passW,email) {
+    return {
+        username: `${userName}`,
+        password: `${passW}`,
+        email: `${email}`,
+    };
 }
 
 
-console.log(sumIsEqual(1, 2, 3)); // returns true
-console.log(sumIsEqual(2, 2, 4)); // returns true
-console.log(sumIsEqual(10, 2, 12)); // returns true
-console.log(sumIsEqual(10, false, 12)); // returns false
-console.log(sumIsEqual('10', '2', 12)); // returns false
-console.log(sumIsEqual('fred', 'bob', 'hello')); // returns false
-
+console.log(returnUserObject('jreich', 'password123', 'jreich@email.com'));
