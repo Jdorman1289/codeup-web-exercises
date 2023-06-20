@@ -53,7 +53,7 @@
 //     email: 'jreich@email.com'
 // }
 
-function returnUserObject(userName,passW,email) {
+function returnUserObject(userName, passW, email) {
     return {
         username: `${userName}`,
         password: `${passW}`,
