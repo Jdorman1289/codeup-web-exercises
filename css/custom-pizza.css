@@ -10,3 +10,12 @@ a.d-flex {
     text-decoration: unset;
     color: rgb(87 87 87);
 }
+
+.pizzaBox {
+    justify-content: center;
+}
+
+.pizzaIMG {
+    width: 75%;
+    height: 85%;
+}
