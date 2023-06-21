@@ -72,12 +72,15 @@
 //     return product;
 // }
 
-function returnProduct(arr) {
-    return arr.reduce((total, currentValue) => total * currentValue, 1);
-}
+// function returnProduct(arr) {
+//     return arr.reduce((product, currentValue) => product * currentValue, 1);
+// }
 
-console.log(returnProduct([1, 2, 3])); // returns 1 * 2 * 3 = 6
-console.log(returnProduct([3, 3, 3])); // returns 3 * 3 * 3 = 27
-console.log(returnProduct([4, 1, 2])); // returns 4 * 1 * 2 = 8
-console.log(returnProduct([4, 0, 2])); // returns 4 * 0 * 2 = 0
-console.log(returnProduct([5, 3, 2])); // returns 5 * 3 * 2 = 30
+const returnProduct = arr => arr.reduce((product, currentValue) => product * currentValue, 1);
+
+
+console.log(returnProduct([1, 2, 3]), 6);
+console.log(returnProduct([3, 3, 3]), 27);
+console.log(returnProduct([4, 1, 2]), 8);
+console.log(returnProduct([4, 0, 2]), 0);
+console.log(returnProduct([5, 3, 2]), 30);
