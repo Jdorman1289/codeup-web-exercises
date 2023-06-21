@@ -23,3 +23,7 @@ a.d-flex {
 h1 {
     padding: 3% 0 0 15%;
 }
+.customCardHeader {
+    color: white;
+    background-color: rgb(44 110 253);
+}
