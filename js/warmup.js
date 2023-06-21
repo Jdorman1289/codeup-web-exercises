@@ -52,14 +52,28 @@
 //         password: 'password123',
 //     email: 'jreich@email.com'
 // }
+//
+// function returnUserObject(userName, passW, email) {
+//     return {
+//         username: `${userName}`,
+//         password: `${passW}`,
+//         email: `${email}`,
+//     };
+// }
+//
+//
+// console.log(returnUserObject('jreich', 'password123', 'jreich@email.com'));
 
-function returnUserObject(userName, passW, email) {
-    return {
-        username: `${userName}`,
-        password: `${passW}`,
-        email: `${email}`,
-    };
+function returnProduct(arr) {
+    let product = 1;
+    arr.forEach(numb => {
+        product *= numb;
+    })
+    return product;
 }
 
-
-console.log(returnUserObject('jreich', 'password123', 'jreich@email.com'));
+console.log(returnProduct([1, 2, 3])); // returns 1 * 2 * 3 = 6
+console.log(returnProduct([3, 3, 3])); // returns 3 * 3 * 3 = 27
+console.log(returnProduct([4, 1, 2])); // returns 4 * 1 * 2 = 8
+console.log(returnProduct([4, 0, 2])); // returns 4 * 0 * 2 = 0
+console.log(returnProduct([5, 3, 2])); // returns 5 * 3 * 2 = 30
