@@ -5,3 +5,8 @@
 .zipSearchButton {
     width: 100%;
 }
+
+a.d-flex {
+    text-decoration: unset;
+    color: rgb(87 87 87);
+}
