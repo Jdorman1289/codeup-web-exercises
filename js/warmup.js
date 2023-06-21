@@ -64,12 +64,16 @@
 //
 // console.log(returnUserObject('jreich', 'password123', 'jreich@email.com'));
 
+// function returnProduct(arr) {
+//     let product = 1;
+//     arr.forEach(numb => {
+//         product *= numb;
+//     })
+//     return product;
+// }
+
 function returnProduct(arr) {
-    let product = 1;
-    arr.forEach(numb => {
-        product *= numb;
-    })
-    return product;
+    return arr.reduce((total, currentValue) => total * currentValue, 1);
 }
 
 console.log(returnProduct([1, 2, 3])); // returns 1 * 2 * 3 = 6
