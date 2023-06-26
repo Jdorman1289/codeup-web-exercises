@@ -76,11 +76,58 @@
 //     return arr.reduce((product, currentValue) => product * currentValue, 1);
 // }
 
-const returnProduct = arr => arr.reduce((product, currentValue) => product * currentValue, 1);
+// const returnProduct = arr => arr.reduce((product, currentValue) => product * currentValue, 1);
+//
+//
+// console.log(returnProduct([1, 2, 3]), 6);
+// console.log(returnProduct([3, 3, 3]), 27);
+// console.log(returnProduct([4, 1, 2]), 8);
+// console.log(returnProduct([4, 0, 2]), 0);
+// console.log(returnProduct([5, 3, 2]), 30);
+
+// ================================= WARM UP
+//
+// Create a function, returnTotalSales, that takes in an array of sales data objects and returns the sum of all
+// totalItemsSold properties. Assume all elements in the input array are valid sales data objects with a totalItemsSold
+// property.
+//
+//     EXAMPLE...
+//
 
 
-console.log(returnProduct([1, 2, 3]), 6);
-console.log(returnProduct([3, 3, 3]), 27);
-console.log(returnProduct([4, 1, 2]), 8);
-console.log(returnProduct([4, 0, 2]), 0);
-console.log(returnProduct([5, 3, 2]), 30);
+// function returnTotalSales(items) {
+//     let sumOfItems = 0;
+//     items.forEach(item => {
+//         sumOfItems += item.totalItemsSold
+//     })
+//     return sumOfItems;
+// }
+
+function returnTotalSales(items) {
+    return items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
+}
+const salesData = [
+    {
+        month: 'January',
+        totalItemsSold: 0
+    },
+    {
+        month: 'February',
+        totalItemsSold: 5
+    },
+    {
+        month: 'March',
+        totalItemsSold: 2
+    },
+    {
+        month: 'April',
+        totalItemsSold: 10
+    },
+    {
+        month: 'May',
+        totalItemsSold: 30
+    }
+];
+
+
+console.log(returnTotalSales(salesData), 47);
