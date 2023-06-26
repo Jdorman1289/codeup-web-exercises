@@ -103,9 +103,12 @@
 //     return sumOfItems;
 // }
 
-function returnTotalSales(items) {
-    return items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
-}
+// function returnTotalSales(items) {
+//     return items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
+// }
+
+const returnTotalSales = items => items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
+
 const salesData = [
     {
         month: 'January',
