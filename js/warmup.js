@@ -107,7 +107,7 @@
 //     return items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
 // }
 
-const returnTotalSales = items => items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
+const returnTotalSales = items => items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold / items.length, 0);
 
 const salesData = [
     {
@@ -133,4 +133,4 @@ const salesData = [
 ];
 
 
-console.log(returnTotalSales(salesData), 47);
+console.log(returnTotalSales(salesData), 9.4);
