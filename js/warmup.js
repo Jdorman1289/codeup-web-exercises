@@ -107,30 +107,76 @@
 //     return items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold, 0);
 // }
 
-const returnTotalSales = items => items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold / items.length, 0);
+// const returnTotalSales = items => items.reduce((sumOfItems, current) => sumOfItems + current.totalItemsSold / items.length, 0);
+//
+// const salesData = [
+//     {
+//         month: 'January',
+//         totalItemsSold: 0
+//     },
+//     {
+//         month: 'February',
+//         totalItemsSold: 5
+//     },
+//     {
+//         month: 'March',
+//         totalItemsSold: 2
+//     },
+//     {
+//         month: 'April',
+//         totalItemsSold: 10
+//     },
+//     {
+//         month: 'May',
+//         totalItemsSold: 30
+//     }
+// ];
+//
+//
+// console.log(returnTotalSales(salesData), 9.4);
 
-const salesData = [
+// Create a function, returnAdmins, that takes in an array of user objects
+// and returns an array of only the admin user objects. Assume the array
+// has at least one user object and all elements have an isAdmin property.
+//
+//     Example:
+
+
+const users = [
+
     {
-        month: 'January',
-        totalItemsSold: 0
+        username: 'fred123',
+        password: 'letmein',
+        email: 'fred123@email.com',
+        isAdmin: true
     },
     {
-        month: 'February',
-        totalItemsSold: 5
+        username: 'cindy123',
+        password: 'hello123',
+        email: 'cindy123@email.com',
+        isAdmin: false
     },
     {
-        month: 'March',
-        totalItemsSold: 2
+        username: 'kathy123',
+        password: 'letmein',
+        email: 'kathy123@email.com',
+        isAdmin: true
     },
     {
-        month: 'April',
-        totalItemsSold: 10
-    },
-    {
-        month: 'May',
-        totalItemsSold: 30
+        username: 'kyle123',
+        password: 'letmein',
+        email: 'kyle123@email.com',
+        isAdmin: false
     }
-];
+]
 
+function returnAdmins(users) {
+    let admins = [];
+    users.forEach(user => {
+        if (user.isAdmin) admins.push(user);
+    })
+    return admins;
+}
 
-console.log(returnTotalSales(salesData), 9.4);
+console.log(returnAdmins(users));
+
