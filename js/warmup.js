@@ -225,7 +225,7 @@ const neighborhood4 = {
 
 
 function isValueGood(property) {
-    return !!(property.medianHomePrice < 300000 && property.schools >= 24);
+    return !!(property.medianHomePrice < 300000 && property.schools >= 24 && property.crimeRate === "low");
 }
 
 
