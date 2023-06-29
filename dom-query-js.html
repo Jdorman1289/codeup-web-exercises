@@ -33,10 +33,19 @@
 <script>
     (function () {
         "use strict";
-        document.getElementById("darkmode").addEventListener("click", () => {
+        let darkModeButton = document.getElementById("darkmode");
+        darkModeButton.addEventListener("click", () => {
             let darkM = document.body;
-            darkM.setAttribute("class", "bg-dark");
-            darkM.style.color = "white";
+
+            if (darkM.hasAttribute("class")) {
+                darkM.removeAttribute("class")
+                darkM.style.color = "black";
+                darkModeButton.setAttribute("class","btn btn-primary");
+            } else {
+                darkM.setAttribute("class", "bg-dark");
+                darkM.style.color = "white";
+                darkModeButton.setAttribute("class","btn btn-outline-secondary");
+            }
         })
 
             // TODO: Uncomment next line and get the main header element by id
