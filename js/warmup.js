@@ -187,7 +187,7 @@
 
 // example data...
 
-    const neighborhood1 = {
+const neighborhood1 = {
     neighborhood: "Lovely Estates",
     medianHomePrice: 280000,
     pool: true,
