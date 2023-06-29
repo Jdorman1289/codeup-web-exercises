@@ -141,42 +141,95 @@
 //
 //     Example:
 
+//
+// const users = [
+//
+//     {
+//         username: 'fred123',
+//         password: 'letmein',
+//         email: 'fred123@email.com',
+//         isAdmin: true
+//     },
+//     {
+//         username: 'cindy123',
+//         password: 'hello123',
+//         email: 'cindy123@email.com',
+//         isAdmin: false
+//     },
+//     {
+//         username: 'kathy123',
+//         password: 'letmein',
+//         email: 'kathy123@email.com',
+//         isAdmin: true
+//     },
+//     {
+//         username: 'kyle123',
+//         password: 'letmein',
+//         email: 'kyle123@email.com',
+//         isAdmin: false
+//     }
+// ]
+//
+// function returnAdmins(users) {
+//     let admins = [];
+//     users.forEach(user => {
+//         if (user.isAdmin) admins.push(user);
+//     })
+//     return admins;
+// }
+//
+// console.log(returnAdmins(users));
+//
 
-const users = [
+// Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable.
+// If the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+// The function should return true if the neighborhood object is desireable and false otherwise.
 
-    {
-        username: 'fred123',
-        password: 'letmein',
-        email: 'fred123@email.com',
-        isAdmin: true
-    },
-    {
-        username: 'cindy123',
-        password: 'hello123',
-        email: 'cindy123@email.com',
-        isAdmin: false
-    },
-    {
-        username: 'kathy123',
-        password: 'letmein',
-        email: 'kathy123@email.com',
-        isAdmin: true
-    },
-    {
-        username: 'kyle123',
-        password: 'letmein',
-        email: 'kyle123@email.com',
-        isAdmin: false
-    }
-]
+// example data...
 
-function returnAdmins(users) {
-    let admins = [];
-    users.forEach(user => {
-        if (user.isAdmin) admins.push(user);
-    })
-    return admins;
+    const neighborhood1 = {
+    neighborhood: "Lovely Estates",
+    medianHomePrice: 280000,
+    pool: true,
+    tennis: false,
+    crimeRate: "low",
+    schools: 22
+};
+
+const neighborhood2 = {
+    neighborhood: "Luminous Estates",
+    medianHomePrice: 270000,
+    pool: true,
+    tennis: false,
+    crimeRate: "high",
+    schools: 24
 }
 
-console.log(returnAdmins(users));
+const neighborhood3 = {
+    neighborhood: "Oak Mountain",
+    medianHomePrice: 290000,
+    pool: false,
+    tennis: false,
+    crimeRate: "low",
+    schools: 24
+}
 
+const neighborhood4 = {
+    neighborhood: "Ginormous Acres",
+    medianHomePrice: 350000,
+    pool: true,
+    tennis: true,
+    crimeRate: "low",
+    schools: 27
+}
+
+
+function isValueGood(property) {
+    return !!(property.medianHomePrice < 300000 && property.schools >= 24);
+}
+
+
+console.log(isValueGood(neighborhood1));
+console.log(isValueGood(neighborhood2));
+console.log(isValueGood(neighborhood3));
+console.log(isValueGood(neighborhood4));
