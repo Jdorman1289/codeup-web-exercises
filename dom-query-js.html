@@ -8,6 +8,11 @@
 </head>
 <body>
 <button class="btn btn-primary" id="darkmode">Darkmode</button>
+<button class="btn btn-primary" id="button1">Main-Header</button>
+<button class="btn btn-primary" id="button2">Sub-Header</button>
+<button class="btn btn-primary" id="button3">Li-Grey</button>
+<button class="btn btn-primary" id="dbidButton">Blue-DBID</button>
+<button class="btn btn-primary" id="button4">Sub-Paragraph</button>
 <h1 id="main-header">Hello World!</h1>
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -40,46 +45,61 @@
             if (darkM.hasAttribute("class")) {
                 darkM.removeAttribute("class")
                 darkM.style.color = "black";
-                darkModeButton.setAttribute("class","btn btn-primary");
+                darkModeButton.setAttribute("class", "btn btn-primary");
             } else {
                 darkM.setAttribute("class", "bg-dark");
                 darkM.style.color = "white";
-                darkModeButton.setAttribute("class","btn btn-outline-secondary");
+                darkModeButton.setAttribute("class", "btn btn-outline-secondary");
             }
         })
 
-            // TODO: Uncomment next line and get the main header element by id
+        // TODO: Uncomment next line and get the main header element by id
         let mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        document.getElementById("button1").addEventListener("click", () => {
+            mainHeader.innerHTML = "JavaScript is Cool";
+        })
+
 
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.setAttribute("style", "color: blue;");
+        document.getElementById("button2").addEventListener("click", () => {
+            subHeader.setAttribute("style", "color: blue;");
+        })
+
 
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-        for (let i = 0; i < listItems.length; i += 2) {
-            listItems[i].setAttribute("style", "color: grey");
-        }
+        document.getElementById("button3").addEventListener("click", () => {
+            for (let i = 0; i < listItems.length; i += 2) {
+                listItems[i].setAttribute("style", "color: grey");
+            }
+        })
+
 
         // TODO: Set text color of li with dbid = 1 to blue
-        for (let i = 0; i < listItems.length; i++) {
-            let dbid = listItems[i].getAttribute("data-dbid");
-            if (parseFloat(dbid) === 1) {
-                listItems[i].setAttribute("style", "color: blue");
+        document.getElementById("dbidButton").addEventListener("click", () => {
+            for (let i = 0; i < listItems.length; i++) {
+                let dbid = listItems[i].getAttribute("data-dbid");
+                if (parseFloat(dbid) === 1) {
+                    listItems[i].setAttribute("style", "color: blue");
+                }
             }
-        }
+        })
+
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "<p>Mission Accomplished!</p>";
+        document.getElementById("button4").addEventListener("click", () => {
+            subParagraphs[0].innerHTML = "<p>Mission Accomplished!</p>";
+        })
+
     })();
 </script>
 </body>
