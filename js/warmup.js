@@ -187,49 +187,87 @@
 
 // example data...
 
-const neighborhood1 = {
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: 22
-};
+// const neighborhood1 = {
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: 22
+// };
+//
+// const neighborhood2 = {
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "high",
+//     schools: 24
+// }
+//
+// const neighborhood3 = {
+//     neighborhood: "Oak Mountain",
+//     medianHomePrice: 290000,
+//     pool: false,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: 24
+// }
+//
+// const neighborhood4 = {
+//     neighborhood: "Ginormous Acres",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: 27
+// }
+//
+//
+// function isValueGood(property) {
+//     return !!(property.medianHomePrice < 300000 && property.schools >= 24 && property.crimeRate === "low");
+// }
+//
+//
+// console.log(isValueGood(neighborhood1));
+// console.log(isValueGood(neighborhood2));
+// console.log(isValueGood(neighborhood3));
+// console.log(isValueGood(neighborhood4));
 
-const neighborhood2 = {
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "high",
-    schools: 24
-}
-
-const neighborhood3 = {
-    neighborhood: "Oak Mountain",
-    medianHomePrice: 290000,
-    pool: false,
-    tennis: false,
-    crimeRate: "low",
-    schools: 24
-}
-
-const neighborhood4 = {
-    neighborhood: "Ginormous Acres",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: 27
-}
+// ================================= WARM UP
 
 
-function isValueGood(property) {
-    return !!(property.medianHomePrice < 300000 && property.schools >= 24 && property.crimeRate === "low");
-}
+// Write a function, returnLargestStudentCount, that takes in an array of classes returns the number of students in the largest class.
+// Assume at least one class object will be present in the input array with students property set to a valid positive integer.
+
+let classes = [
+    {class: "6th grade history", students: 18},
+    {class: "7th grade history", students: 20},
+    {class: "8th grade history", students: 22},
+    {class: "4th grade history", students: 30},
+    {class: "10th grade history", students: 25}
+];
+let classes2 = [
+    {class: "6th grade history", students: 500},
+    {class: "7th grade history", students: 20},
+    {class: "8th grade history", students: 22},
+    {class: "4th grade history", students: 30},
+    {class: "10th grade history", students: 25}
+];
 
 
-console.log(isValueGood(neighborhood1));
-console.log(isValueGood(neighborhood2));
-console.log(isValueGood(neighborhood3));
-console.log(isValueGood(neighborhood4));
+// function returnLargestStudentCount(classes) {
+//     let highest = 0;
+//
+//     for (const element of classes) {
+//         if (element.students > highest) {
+//             highest = element.students;
+//         }
+//     }
+//     return highest;
+// }
+
+const returnLargestStudentCount = classes => classes.reduce((highest, element) => (element.students > highest) ? highest = element.students : highest + 0, 0);
+
+console.log(returnLargestStudentCount(classes2), 500); // returns 500
+console.log(returnLargestStudentCount(classes), 30); // returns 30
