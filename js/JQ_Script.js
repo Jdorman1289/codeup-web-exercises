@@ -1,8 +1,16 @@
 $(function () {
-    $('li').css('font-size', '20px');
+    $('h1').click(function () {
+        $(this).css('background-color', 'blue');
+    });
 
-    alert($('h1')[0].innerText);
+    $('p').dblclick(function () {
+        $(this).css('font-size', '18px');
+    });
 
-    $('h1, p, li').css('color', 'blue');
+    $('li').hover(function () {
+        $(this).css('color', 'red')
+    }, function () {
+        $(this).css('color', 'black')
+    })
 
 })
