@@ -3,6 +3,6 @@ $(function () {
 
     alert($('h1')[0].innerText);
 
-    $('h1, p, li').css('color','blue');
+    $('h1, p, li').css('color', 'blue');
 
 })
