@@ -1,4 +1,4 @@
 $(function () {
-    alert($('#ulID')[0].innerText);
+    $('.codeup').css('border', '1px red solid');
 
 })
