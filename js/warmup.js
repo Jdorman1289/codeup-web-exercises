@@ -297,7 +297,7 @@ function getTopRunners(runners) {
     let champTime = 0;
     let answer = {}
     runners.forEach(runner => {
-        let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0);
+        let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0) / runner.lapTimes.length;
         if (newNum > champTime) {
             champTime = newNum;
             answer = runner;
