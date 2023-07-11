@@ -10,13 +10,23 @@
         .invisible {
             visibility: hidden;
         }
+
         .highlight {
             background-color: #0fb784;
+        }
+
+        .last-color {
+            background-color: yellow;
+        }
+
+        .bold-class {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 <button>toggle</button>
+<button id="last">Last Item</button>
 
 <p>3 unique and 7 repeating FAQs about national parks:</p>
 
@@ -51,12 +61,34 @@
     <dt>What is a more fun park?</dt>
     <dd>A giant owl-like creature PARK.</dd>
 </dl>
-
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+<h3>State Parks of not-Texas</h3>
+<ul id="state-parks-texas">
+    <li>not-Abilene</li>
+    <li>not-Big Bend</li>
+    <li>not-Choke Canyon</li>
+    <li>not-Davis Mountains</li>
+    <li>not-Enchanted Rock</li>
+</ul>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script>
-
     let DDs = document.querySelectorAll("dd");
 
     document.querySelector("button").addEventListener("click", () => {
@@ -68,6 +100,12 @@
     document.querySelectorAll("dt").forEach(dt => {
         dt.addEventListener("click", () => {
             dt.classList.toggle("highlight");
+        })
+    })
+
+    document.querySelector("#last").addEventListener("click", () => {
+        document.querySelectorAll("ul").forEach(list => {
+            list.lastElementChild.setAttribute("class", "last-color");
         })
     })
 
