@@ -293,19 +293,21 @@ const runners = [
     {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
 ];
 
-function getTopRunners(runners) {
-    let champTime = 0;
-    let answer = {}
-    runners.forEach(runner => {
-        let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0) / runner.lapTimes.length;
-        if (newNum > champTime) {
-            champTime = newNum;
-            answer = runner;
-        }
-    })
-    return answer;
-
-}
+// function getTopRunners(runners) {
+//     let champTime = 0;
+//     let answer = {}
+//     runners.forEach(runner => {
+//         let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0) / runner.lapTimes.length;
+//         if (newNum > champTime) {
+//             champTime = newNum;
+//             answer = runner;
+//         }
+//     })
+//     return answer;
+//
+// }
+//
+const getTopRunners = runners => runners.reduce((champ, runner) => (avgLapTime = runner.lapTimes.reduce((sum, time) => sum + time, 0) / runner.lapTimes.length, (champ.avgLapTime || 0) < avgLapTime ? { ...runner, avgLapTime } : champ), {});
 
 console.log(getTopRunners(runners));
 
