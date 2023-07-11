@@ -6,11 +6,62 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jquery_faq</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
+<button>toggle</button>
+
+<p>3 unique and 7 repeating FAQs about national parks:</p>
+
+<dl>
+    <dt>What is a park?</dt>
+    <dd>A large feline inhabiting Bodmin Moor PARK.</dd>
+
+    <dt>What is a fun park?</dt>
+    <dd>A sea serpent PARK.</dd>
+
+    <dt>What is a more fun park?</dt>
+    <dd>A giant owl-like creature PARK.</dd>
+
+    <dt>What is a park?</dt>
+    <dd>A large feline inhabiting Bodmin Moor PARK.</dd>
+
+    <dt>What is a fun park?</dt>
+    <dd>A sea serpent PARK.</dd>
+
+    <dt>What is a more fun park?</dt>
+    <dd>A giant owl-like creature PARK.</dd>
+
+    <dt>What is a park?</dt>
+    <dd>A large feline inhabiting Bodmin Moor PARK.</dd>
+
+    <dt>What is a fun park?</dt>
+    <dd>A sea serpent PARK.</dd>
+
+    <dt>What is a more fun park?</dt>
+    <dd>A giant owl-like creature PARK.</dd>
+
+    <dt>What is a more fun park?</dt>
+    <dd>A giant owl-like creature PARK.</dd>
+</dl>
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+
+    let DDs = document.querySelectorAll("dd");
+
+    document.querySelector("button").addEventListener("click", () => {
+        DDs.forEach(dd => {
+            dd.classList.toggle("invisible");
+        })
+    })
+
+</script>
 </body>
 </html>
