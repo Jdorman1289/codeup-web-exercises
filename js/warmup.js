@@ -240,34 +240,77 @@
 // Write a function, returnLargestStudentCount, that takes in an array of classes returns the number of students in the largest class.
 // Assume at least one class object will be present in the input array with students property set to a valid positive integer.
 
-let classes = [
-    {class: "6th grade history", students: 18},
-    {class: "7th grade history", students: 20},
-    {class: "8th grade history", students: 22},
-    {class: "4th grade history", students: 30},
-    {class: "10th grade history", students: 25}
-];
-let classes2 = [
-    {class: "6th grade history", students: 500},
-    {class: "7th grade history", students: 20},
-    {class: "8th grade history", students: 22},
-    {class: "4th grade history", students: 30},
-    {class: "10th grade history", students: 25}
-];
-
-
-// function returnLargestStudentCount(classes) {
-//     let highest = 0;
+// let classes = [
+//     {class: "6th grade history", students: 18},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22},
+//     {class: "4th grade history", students: 30},
+//     {class: "10th grade history", students: 25}
+// ];
+// let classes2 = [
+//     {class: "6th grade history", students: 500},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22},
+//     {class: "4th grade history", students: 30},
+//     {class: "10th grade history", students: 25}
+// ];
 //
-//     for (const element of classes) {
-//         if (element.students > highest) {
-//             highest = element.students;
-//         }
-//     }
-//     return highest;
-// }
+//
+// // function returnLargestStudentCount(classes) {
+// //     let highest = 0;
+// //
+// //     for (const element of classes) {
+// //         if (element.students > highest) {
+// //             highest = element.students;
+// //         }
+// //     }
+// //     return highest;
+// // }
+//
+// const returnLargestStudentCount = classes => classes.reduce((highest, element) => (element.students > highest) ? highest = element.students : highest + 0, 0);
+//
+// console.log(returnLargestStudentCount(classes2), 500); // returns 500
+// console.log(returnLargestStudentCount(classes), 30); // returns 30
 
-const returnLargestStudentCount = classes => classes.reduce((highest, element) => (element.students > highest) ? highest = element.students : highest + 0, 0);
+// You are given an array of runner objects, where each object represents a
+// runner with properties name, age, and lapTimes (in seconds). Write a
+// function called getTopRunners that takes the runners array as input and
+// returns an array of top runners. A runner is considered top if their
+// average lap time is 50 seconds or faster. If there are no top runners in
+// the input array, the function should return an empty array
 
-console.log(returnLargestStudentCount(classes2), 500); // returns 500
-console.log(returnLargestStudentCount(classes), 30); // returns 30
+
+// HINT: You might want to create a function called calculateLapTimeAverage
+// that takes in an array of numbers and returns the average
+
+
+// Input:
+const runners = [
+    {name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1]},
+    {name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9]},
+    {name: "Charlie", age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5]},
+    {name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3]},
+    {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
+];
+
+function getTopRunners(runners) {
+    let champTime = 0;
+    let answer = {}
+    runners.forEach(runner => {
+        let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0);
+        if (newNum > champTime) {
+            champTime = newNum;
+            answer = runner;
+        }
+    })
+    return answer;
+
+}
+
+console.log(getTopRunners(runners));
+
+// Refactor your code from yesterday's warmup to return just the
+// top runner
+
+// Expected output:
+// { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
