@@ -540,9 +540,13 @@ const hogwartsHouses = [
     }
 ]
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 function displayHouses(houses) {
     houses.forEach(house => {
-        console.log('name:', house.name, ',', 'animal:', house.animal, ',', 'founder:', house.founder, ',', 'common room:', house.commonRoom, ',', 'founder name:', house.heads[0].firstName, house.heads[0].lastName);
+        console.log('name:', house.name, ',', 'animal:', house.animal, ',', 'founder:', house.founder, ',', 'common room:', house.commonRoom, ',', 'founder name:', house.heads[getRandomInt(2)].firstName, house.heads[getRandomInt(2)].lastName);
     })
 }
 
