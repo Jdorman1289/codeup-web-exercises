@@ -22,6 +22,9 @@
         .bold-class {
             font-weight: bold;
         }
+        .blue-text {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -61,14 +64,17 @@
     <dt>What is a more fun park?</dt>
     <dd>A giant owl-like creature PARK.</dd>
 </dl>
+
 <h3 id="national-parks-heading">National Parks</h3>
 <ul id="national-parks">
+
     <li>Arches</li>
     <li>Badlands</li>
     <li>Carlsbad Caverns</li>
     <li>Denali</li>
     <li>Everglades</li>
 </ul>
+
 <h3>State Parks of Texas</h3>
 <ul id="state-parks-texas">
     <li>Abilene</li>
@@ -77,6 +83,7 @@
     <li>Davis Mountains</li>
     <li>Enchanted Rock</li>
 </ul>
+
 <h3>State Parks of not-Texas</h3>
 <ul id="state-parks-not-texas">
     <li>not-Abilene</li>
@@ -106,6 +113,19 @@
     document.querySelector("#last").addEventListener("click", () => {
         document.querySelectorAll("ul").forEach(list => {
             list.lastElementChild.setAttribute("class", "last-color");
+        })
+    })
+
+    document.querySelectorAll('h3').forEach(element => {
+        element.addEventListener('click', () => {
+            element.nextElementSibling.querySelectorAll('li').forEach(li => {
+                li.classList.toggle('bold-class');
+            })
+        })
+    })
+    document.querySelectorAll('li').forEach(li => {
+        li.addEventListener("click", () => {
+            li.parentElement.firstElementChild.classList.toggle("blue-text");
         })
     })
 
