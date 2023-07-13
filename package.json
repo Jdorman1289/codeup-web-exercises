@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "mapbox-gl-rain-layer": "^0.5.0"
+  }
+}
