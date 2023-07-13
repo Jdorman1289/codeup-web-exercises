@@ -1,3 +1,16 @@
+function getInfo() {
+    $.ajax({
+        url: 'data/inventory.json',
+        type: 'GET',
+    }).done((data) => {
+        console.log(data)
+        document.querySelector('tr').innerHTML = `${renderTableHead(data)}`;
+        document.querySelector('tbody').firstElementChild.innerHTML = `${renderItemQuantity(data)}`;
+        document.querySelector('tbody').firstElementChild.nextElementSibling.innerHTML = `${renderItemPrice(data)}`;
+        document.querySelector('tbody').lastElementChild.innerHTML = `${renderItemCategories(data)}`;
+    })
+}
+
 function renderTableHead(data) {
     let info = [];
     data.forEach(item => {
@@ -30,13 +43,7 @@ function renderItemCategories(data) {
     return info.join('');
 }
 
-$.ajax({
-    url: 'data/inventory.json',
-    type: 'GET',
-}).done((data) => {
-    console.log(data)
-    document.querySelector('tr').innerHTML = `${renderTableHead(data)}`;
-    document.querySelector('tbody').firstElementChild.innerHTML = `${renderItemQuantity(data)}`;
-    document.querySelector('tbody').firstElementChild.nextElementSibling.innerHTML = `${renderItemPrice(data)}`;
-    document.querySelector('tbody').lastElementChild.innerHTML = `${renderItemCategories(data)}`;
+document.querySelector('button').addEventListener("click", () => {
+    getInfo();
 })
+getInfo();
