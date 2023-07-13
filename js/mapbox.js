@@ -25,12 +25,22 @@ function createPopup() {
     `)
 }
 
+//geo code
 function goToParis() {
     geocode('Paris', MAPBOX_TOKEN).then((data) => {
         map.setCenter(data);
     })
 }
 
+//reverse geo
+function showLocation() {
+    const coord = map.getCenter();
+    reverseGeocode(coord, MAPBOX_TOKEN).then((data) => {
+        document.querySelector('h1').innerHTML = `${data}`;
+    })
+}
+
 document.querySelector('#geocode-button').addEventListener("click", goToParis);
+document.querySelector('#reverse-geo').addEventListener("click", showLocation);
 
 marker.setPopup(popup);
