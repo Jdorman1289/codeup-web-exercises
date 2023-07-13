@@ -13,14 +13,24 @@ function initializeMap() {
     }
     return new mapboxgl.Map(mapOptions);
 }
+
 function createMarker() {
     return new mapboxgl.Marker().setLngLat([-98.4916, 29.4252]).addTo(map);
 }
+
 function createPopup() {
     return new mapboxgl.Popup().setLngLat([-98.4916, 29.4252]).setHTML(`
     <h1>Sup</h1>
     <p>My man!</p>
     `)
 }
+
+function goToParis() {
+    geocode('Paris', MAPBOX_TOKEN).then((data) => {
+        map.setCenter(data);
+    })
+}
+
+document.querySelector('#geocode-button').addEventListener("click", goToParis);
 
 marker.setPopup(popup);
