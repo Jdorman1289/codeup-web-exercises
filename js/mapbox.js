@@ -34,6 +34,8 @@ function showLocation() {
 }
 document.querySelector('#geocode-button').addEventListener("click", goToParis);
 document.querySelector('#reverse-geo').addEventListener("click", showLocation);
+
+// Rain layer code taken from https://github.com/rainviewer/rainviewer-api-example/blob/master/rainviewer-mapbox-example.html
 map.on("load", () => {
     fetch("https://api.rainviewer.com/public/weather-maps.json")
         .then(res => res.json())
