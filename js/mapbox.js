@@ -2,29 +2,34 @@ mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/navigation-day-v1",
-    zoom: 3,
+    zoom: 1,
     center: [-98.4916, 29.4252]
 });
 
 window.map = map;
-const marker = createMarker();
-const popup = createPopup();
+// const marker = createMarker();
+// const popup = createPopup();
 function createMarker() {
     return new mapboxgl.Marker().setLngLat([-98.4916, 29.4252]).addTo(map);
 }
-function createPopup() {
-    return new mapboxgl.Popup().setLngLat([-98.4916, 29.4252]).setHTML(`
-    <h1>Sup</h1>
-    <p>My man!</p>
-    `)
-}
-marker.setPopup(popup);
+// function createPopup() {
+//     return new mapboxgl.Popup().setLngLat([-98.4916, 29.4252]).setHTML(`
+//     <h1>Sup</h1>
+//     <p>My man!</p>
+//     `)
+// }
+// marker.setPopup(popup);
 //geo code
-function goToParis() {
-    geocode('Paris', MAPBOX_TOKEN).then((data) => {
+function goToItaly() {
+    geocode('Italy', MAPBOX_TOKEN).then((data) => {
         map.setCenter(data);
+        map.setZoom(3);
+        const marker = new mapboxgl.Marker().setLngLat(data).addTo(map);
+        const popup = mapboxgl.Popup().setHTML('Anything in Italy is good to eat');
+        marker.setPopup(popup);
     })
 }
+
 //reverse geo
 function showLocation() {
     const coord = map.getCenter();
@@ -32,7 +37,7 @@ function showLocation() {
         document.querySelector('h1').innerHTML = `${data}`;
     })
 }
-document.querySelector('#geocode-button').addEventListener("click", goToParis);
+document.querySelector('#geocode-button').addEventListener("click", goToItaly);
 document.querySelector('#reverse-geo').addEventListener("click", showLocation);
 
 // Rain layer code taken from https://github.com/rainviewer/rainviewer-api-example/blob/master/rainviewer-mapbox-example.html
