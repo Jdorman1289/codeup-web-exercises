@@ -554,11 +554,6 @@
 //
 // displayHouses(hogwartsHouses);
 
-
-let thisOne = [1, 3, 2, 13, 74, 33];
-// [1, 3, 13, 33];
-let thatOne = [62, 3, 2, 8, 531, 7];
-// Expected Output: [3, 531, 7]
 // function removeEvens(someArr) {
 //     let oddArr = [];
 //     someArr.forEach(value => {
@@ -568,6 +563,11 @@ let thatOne = [62, 3, 2, 8, 531, 7];
 //     })
 //     return oddArr;
 // }
+
+let thisOne = [1, 3, 2, 13, 74, 33];
+// [1, 3, 13, 33];
+let thatOne = [62, 3, 2, 8, 531, 7];
+// Expected Output: [3, 531, 7]
 
 
 const removeEvens = someArr => someArr.filter(value => value % 2 === 1);
