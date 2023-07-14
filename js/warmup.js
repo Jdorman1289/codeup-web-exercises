@@ -570,7 +570,9 @@ let thatOne = [62, 3, 2, 8, 531, 7];
 // Expected Output: [3, 531, 7]
 
 
-const removeEvens = someArr => someArr.filter(value => value % 2 === 1);
+const removeEvens = someArr => (!Array.isArray(someArr)) || (!parseInt(someArr)) ? false : someArr.filter(value => value % 2 === 1);
 
 console.log(removeEvens(thisOne));
 console.log(removeEvens(thatOne));
+console.log(removeEvens("check"));
+console.log(removeEvens(["c","b"]));
