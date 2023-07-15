@@ -23,14 +23,6 @@ $.ajax(URL).done(data => {
 }).fail(console.error);
 
 
-// TODO: log various parts of the API
-
-// $.ajax(URL).done(data => {
-//     console.log(data);
-//     // TODO: log the city name
-//     // TODO: log the first three-hour forecast block
-//     // TODO: log the humidity for the first three-hour block
-// }).fail(console.error);
 
 
 // TODO: log the humidity for all 5 days
