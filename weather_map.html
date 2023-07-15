@@ -15,12 +15,19 @@
 </head>
 <body>
 <header class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="col-12">
+    <div class="row text-center d-flex justify-content-center">
+        <div class="col-6">
             <h1>weather forecast</h1>
         </div>
-        <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-            <input type="search" class="form-control" placeholder="Find Weather..." aria-label="Search">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-primary btn-sm">Search</button>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-2">
+            <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                <input type="search" class="form-control" placeholder="Find Weather..." aria-label="Search">
+            </div>
         </div>
 
     </div>
@@ -28,8 +35,8 @@
 <main>
     <div class="container">
         <div class="row">
-            <ul class="grid-container">
-                <div class="col">
+            <ul class="grid-container d-flex justify-content-center">
+                <div class="col-lg-auto">
                     <li class="grid-item">
                         <div class="card card-night">
                             <div class="night"></div>
@@ -40,7 +47,7 @@
                         </div>
                     </li>
                 </div>
-                <div class="col">
+                <div class="col-lg-auto">
                     <li class="grid-item">
                         <div class="card card-rain">
                             <div class="rain"></div>
@@ -51,7 +58,7 @@
                         </div>
                     </li>
                 </div>
-                <div class="col">
+                <div class="col-lg-auto">
                     <li class="grid-item">
                         <div class="card card-snow">
                             <div class="snow"></div>
@@ -62,7 +69,7 @@
                         </div>
                     </li>
                 </div>
-                <div class="col">
+                <div class="col-lg-auto">
                     <li class="grid-item">
                         <div class="card card-storm">
                             <div class="storm"></div>
@@ -73,7 +80,7 @@
                         </div>
                     </li>
                 </div>
-                <div class="col">
+                <div class="col-lg-auto">
                     <li class="grid-item">
                         <div class="card card-sunny">
                             <div class="sunny"></div>
@@ -91,9 +98,9 @@
 
 <aside>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div id='map' style='width: 1265px; height: 450px;'></div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-auto">
+                <div id='map' style='width: 1130px; height: 450px;'></div>
             </div>
         </div>
     </div>
