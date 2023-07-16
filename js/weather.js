@@ -18,11 +18,6 @@ const Day2 = document.querySelector('.day2');
 const Day3 = document.querySelector('.day3');
 const Day4 = document.querySelector('.day4');
 const Day5 = document.querySelector('.day5');
-const Date1 = document.querySelector('.date1');
-const Date2 = document.querySelector('.date2');
-const Date3 = document.querySelector('.date3');
-const Date4 = document.querySelector('.date4');
-const Date5 = document.querySelector('.date5');
 
 
 // $.ajax(URL).done(data => {
@@ -161,20 +156,6 @@ function showWeather(weatherArray) {
         Day5.firstElementChild.firstElementChild.removeAttribute('class');
     }
 }
-
-
-// TODO: log the min and max temp for each day
-
-// $.ajax(getWeatherURL(...ALAMO_COORDINATES))
-//     .done(data => {
-//         console.log(data);
-//         const minMaxTemps = returnMinMaxTemps(data);
-//         minMaxTemps.forEach(minMaxTemp => {
-//             console.log(minMaxTemp);
-//         });
-//     })
-//     .fail(console.error);
-
 
 //Mapbox//////////////////////////////////////////////////////////////
 mapboxgl.accessToken = MAPBOX_TOKEN;
