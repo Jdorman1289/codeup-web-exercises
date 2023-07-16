@@ -5,7 +5,7 @@ const OPEN_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
 // Simple way to create URL for request based on coordinates
 function getWeatherURL(lat, lon) {
-    return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}`;
+    return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}&units=imperial`;
 }
 
 const WEATHER_COORDINATES = ['29.4260', '-98.4861'];
@@ -18,6 +18,11 @@ const Day2 = document.querySelector('.day2');
 const Day3 = document.querySelector('.day3');
 const Day4 = document.querySelector('.day4');
 const Day5 = document.querySelector('.day5');
+const Date1 = document.querySelector('.date1');
+const Date2 = document.querySelector('.date2');
+const Date3 = document.querySelector('.date3');
+const Date4 = document.querySelector('.date4');
+const Date5 = document.querySelector('.date5');
 
 
 // $.ajax(URL).done(data => {
@@ -25,9 +30,13 @@ const Day5 = document.querySelector('.day5');
 // }).fail(console.error);
 
 
-$.ajax(URL)
-    .done((data) => {
+$.ajax({
+    url: URL,
+    type: 'GET',
+}).done((data) => {
         let weatherArray = [];
+
+        const minMaxTemps = returnMinMaxTemps(data);
 
         data.list.forEach((day, index) => {
             if (index % 8 === 0) {
@@ -35,8 +44,17 @@ $.ajax(URL)
             }
         });
         showWeather(weatherArray);
+        showDatesAndTemps(minMaxTemps);
     })
     .fail(console.error);
+
+function showDatesAndTemps(minMaxTemps) {
+    Day1.lastElementChild.firstElementChild.innerText = `TODAY:\n\n${parseInt(minMaxTemps[0].max)} ℉`;
+    Day2.lastElementChild.firstElementChild.innerText = `${minMaxTemps[1].date}:\n\n ${parseInt(minMaxTemps[1].max)} ℉`;
+    Day3.lastElementChild.firstElementChild.innerText = `${minMaxTemps[2].date}:\n\n ${parseInt(minMaxTemps[2].max)} ℉`;
+    Day4.lastElementChild.firstElementChild.innerText = `${minMaxTemps[3].date}:\n\n ${parseInt(minMaxTemps[3].max)} ℉`;
+    Day5.lastElementChild.firstElementChild.innerText = `${minMaxTemps[4].date}:\n\n ${parseInt(minMaxTemps[4].max)} ℉`;
+}
 
 function showWeather(weatherArray) {
     Day1.lastElementChild.lastElementChild.innerText = weatherArray[0];
