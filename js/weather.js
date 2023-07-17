@@ -82,6 +82,8 @@
         })
     })
 
+
+
 //Mapbox//////////////////////////////////////////////////////////////
     mapboxgl.accessToken = MAPBOX_TOKEN;
     const map = new mapboxgl.Map({
@@ -90,9 +92,17 @@
         zoom: 5,
         center: [-98.4916, 29.4252]
     });
-    const marker = new mapboxgl.Marker().setLngLat([-98.4916, 29.4252]).addTo(map);
+    const marker = new mapboxgl.Marker({draggable: true}).setLngLat([-98.4916, 29.4252]).addTo(map);
     window.map = map;
 
+    marker.on('dragend', () => {
+        const lngLat = marker.getLngLat();
+        URL = getWeatherURL(lngLat.lat, lngLat.lng);
+        runAjax();
+        reverseGeocode(lngLat, MAPBOX_TOKEN).then((data) => {
+            forecastLocationName.innerText = data;
+        });
+    });
 
 // Rain layer code taken from https://github.com/rainviewer/rainviewer-api-example/blob/master/rainviewer-mapbox-example.html
     map.on("load", () => {
