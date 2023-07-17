@@ -21,9 +21,9 @@ const Day5 = document.querySelector('.day5');
 const searchInput = document.querySelector('input');
 
 
-// $.ajax(URL).done(data => {
-//     console.log(data);
-// }).fail(console.error);
+$.ajax(URL).done(data => {
+    console.log(data);
+}).fail(console.error);
 
 function runAjax() {
     $.ajax({
@@ -31,16 +31,18 @@ function runAjax() {
         type: 'GET',
     }).done((data) => {
         let weatherArray = [];
-
         let minMaxTemps = returnMinMaxTemps(data);
+        let icons = [];
 
         data.list.forEach((day, index) => {
             if (index % 8 === 0) {
                 weatherArray.push(day.weather[0].description)
+                icons.push(day.weather[0].icon)
             }
         });
-        showWeather(weatherArray);
+        showWeather(weatherArray, icons);
         showDatesAndTemps(minMaxTemps);
+        console.log(icons);
     })
         .fail(console.error);
 }
@@ -55,16 +57,22 @@ function showDatesAndTemps(minMaxTemps) {
     Day5.lastElementChild.firstElementChild.innerText = `${minMaxTemps[4].date}:\n\n ${parseInt(minMaxTemps[4].max)} ℉`;
 }
 
-function showWeather(weatherArray) {
+function showWeather(weatherArray, icons) {
     Day1.lastElementChild.lastElementChild.innerText = weatherArray[0];
+    Day1.firstElementChild.firstElementChild.src = `https://openweathermap.org/img/wn/${icons[0]}@4x.png`;
 
     Day2.lastElementChild.lastElementChild.innerText = weatherArray[1];
+    Day2.firstElementChild.firstElementChild.src = `https://openweathermap.org/img/wn/${icons[1]}@4x.png`;
 
     Day3.lastElementChild.lastElementChild.innerText = weatherArray[2];
+    Day3.firstElementChild.firstElementChild.src = `https://openweathermap.org/img/wn/${icons[2]}@4x.png`;
 
     Day4.lastElementChild.lastElementChild.innerText = weatherArray[3];
+    Day4.firstElementChild.firstElementChild.src = `https://openweathermap.org/img/wn/${icons[3]}@4x.png`;
 
     Day5.lastElementChild.lastElementChild.innerText = weatherArray[4];
+    Day5.firstElementChild.firstElementChild.src = `https://openweathermap.org/img/wn/${icons[4]}@4x.png`;
+
 }
 
 document.querySelector('button').addEventListener('click', () => {
