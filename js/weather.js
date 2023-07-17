@@ -77,6 +77,7 @@
             URL = getWeatherURL(coors[1], coors[0]);
             runAjax();
             map.setCenter([coors[0], coors[1]]);
+            marker.setLngLat([coors[0], coors[1]]).addTo(map);
             searchInput.value = '';
         })
     })
@@ -89,7 +90,7 @@
         zoom: 5,
         center: [-98.4916, 29.4252]
     });
-
+    const marker = new mapboxgl.Marker().setLngLat([-98.4916, 29.4252]).addTo(map);
     window.map = map;
 
 
