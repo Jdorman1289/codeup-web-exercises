@@ -83,7 +83,6 @@
     })
 
 
-
 //Mapbox//////////////////////////////////////////////////////////////
     mapboxgl.accessToken = MAPBOX_TOKEN;
     const map = new mapboxgl.Map({
