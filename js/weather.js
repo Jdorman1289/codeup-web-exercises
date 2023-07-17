@@ -10,7 +10,6 @@ function getWeatherURL(lat, lon) {
 
 const WEATHER_COORDINATES = ['29.4260', '-98.4861'];
 
-
 let URL = getWeatherURL(...WEATHER_COORDINATES);
 
 const Day1 = document.querySelector('.day1');
@@ -19,11 +18,12 @@ const Day3 = document.querySelector('.day3');
 const Day4 = document.querySelector('.day4');
 const Day5 = document.querySelector('.day5');
 const searchInput = document.querySelector('input');
+let forecastLocationName = document.querySelector('#forecastName');
+forecastLocationName.innerText = `San Antonio, Texas`
 
-
-$.ajax(URL).done(data => {
-    console.log(data);
-}).fail(console.error);
+// $.ajax(URL).done(data => {
+//     console.log(data);
+// }).fail(console.error);
 
 function runAjax() {
     $.ajax({
@@ -75,82 +75,89 @@ function showWeather(weatherArray, icons) {
 
 }
 
+function updateMap(lat, lon) {
+    let mapSrc = `https://embed.windy.com/embed2.html?lat=${lat}&lon=${lon}&detailLat=${lat}&detailLon=${lon}&width=1130&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=&imperialWind=default&imperialTemp=default&radarRange=-1`;
+    document.querySelector("iframe").src = mapSrc;
+}
+updateMap(WEATHER_COORDINATES[0],WEATHER_COORDINATES[1]);
+
 document.querySelector('button').addEventListener('click', () => {
     geocode(searchInput.value, MAPBOX_TOKEN).then((coors) => {
         URL = getWeatherURL(coors[1], coors[0]);
+        forecastLocationName.innerText = `${searchInput.value}`;
         runAjax();
-        map.setCenter([coors[0], coors[1]]);
+        updateMap(coors[1],coors[0]);
         searchInput.value = '';
     })
 })
-
-//Mapbox//////////////////////////////////////////////////////////////
-mapboxgl.accessToken = MAPBOX_TOKEN;
-const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/navigation-night-v1",
-    zoom: 5,
-    center: [-98.4916, 29.4252]
-});
-
-window.map = map;
-
-
-// Rain layer code taken from https://github.com/rainviewer/rainviewer-api-example/blob/master/rainviewer-mapbox-example.html
-map.on("load", () => {
-    fetch("https://api.rainviewer.com/public/weather-maps.json")
-        .then(res => res.json())
-        .then(apiData => {
-            apiData.radar.past.forEach(frame => {
-                map.addLayer({
-                    id: `rainviewer_${frame.path}`,
-                    type: "raster",
-                    source: {
-                        type: "raster",
-                        tiles: [
-                            apiData.host + frame.path + '/256/{z}/{x}/{y}/2/1_1.png'
-                        ],
-                        tileSize: 256
-                    },
-                    layout: {visibility: "none"},
-                    minzoom: 0,
-                    maxzoom: 12
-                });
-            });
-
-            let i = 0;
-            const interval = setInterval(() => {
-                if (i > apiData.radar.past.length - 1) {
-                    clearInterval(interval);
-                    return;
-                } else {
-                    apiData.radar.past.forEach((frame, index) => {
-                        map.setLayoutProperty(
-                            `rainviewer_${frame.path}`,
-                            "visibility",
-                            index === i || index === i - 1 ? "visible" : "none"
-                        );
-                    });
-                    if (i - 1 >= 0) {
-                        const frame = apiData.radar.past[i - 1];
-                        let opacity = 1;
-                        setTimeout(() => {
-                            const i2 = setInterval(() => {
-                                if (opacity <= 0) {
-                                    return clearInterval(i2);
-                                }
-                                map.setPaintProperty(
-                                    `rainviewer_${frame.path}`,
-                                    "raster-opacity",
-                                    opacity
-                                );
-                                opacity -= 0.1;
-                            }, 50);
-                        }, 400);
-                    }
-                    i += 1;
-                }
-            }, 2000);
-        })
-        .catch(console.error);
-});
+//
+// //Mapbox//////////////////////////////////////////////////////////////
+// mapboxgl.accessToken = MAPBOX_TOKEN;
+// const map = new mapboxgl.Map({
+//     container: "map",
+//     style: "mapbox://styles/mapbox/navigation-night-v1",
+//     zoom: 5,
+//     center: [-98.4916, 29.4252]
+// });
+//
+// window.map = map;
+//
+//
+// // Rain layer code taken from https://github.com/rainviewer/rainviewer-api-example/blob/master/rainviewer-mapbox-example.html
+// map.on("load", () => {
+//     fetch("https://api.rainviewer.com/public/weather-maps.json")
+//         .then(res => res.json())
+//         .then(apiData => {
+//             apiData.radar.past.forEach(frame => {
+//                 map.addLayer({
+//                     id: `rainviewer_${frame.path}`,
+//                     type: "raster",
+//                     source: {
+//                         type: "raster",
+//                         tiles: [
+//                             apiData.host + frame.path + '/256/{z}/{x}/{y}/2/1_1.png'
+//                         ],
+//                         tileSize: 256
+//                     },
+//                     layout: {visibility: "none"},
+//                     minzoom: 0,
+//                     maxzoom: 12
+//                 });
+//             });
+//
+//             let i = 0;
+//             const interval = setInterval(() => {
+//                 if (i > apiData.radar.past.length - 1) {
+//                     clearInterval(interval);
+//                     return;
+//                 } else {
+//                     apiData.radar.past.forEach((frame, index) => {
+//                         map.setLayoutProperty(
+//                             `rainviewer_${frame.path}`,
+//                             "visibility",
+//                             index === i || index === i - 1 ? "visible" : "none"
+//                         );
+//                     });
+//                     if (i - 1 >= 0) {
+//                         const frame = apiData.radar.past[i - 1];
+//                         let opacity = 1;
+//                         setTimeout(() => {
+//                             const i2 = setInterval(() => {
+//                                 if (opacity <= 0) {
+//                                     return clearInterval(i2);
+//                                 }
+//                                 map.setPaintProperty(
+//                                     `rainviewer_${frame.path}`,
+//                                     "raster-opacity",
+//                                     opacity
+//                                 );
+//                                 opacity -= 0.1;
+//                             }, 50);
+//                         }, 400);
+//                     }
+//                     i += 1;
+//                 }
+//             }, 2000);
+//         })
+//         .catch(console.error);
+// });
