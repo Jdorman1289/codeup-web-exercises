@@ -76,6 +76,7 @@
         geocode(searchInput.value, MAPBOX_TOKEN).then((coors) => {
             URL = getWeatherURL(coors[1], coors[0]);
             runAjax();
+            forecastLocationName.innerText = searchInput.value
             map.setCenter([coors[0], coors[1]]);
             marker.setLngLat([coors[0], coors[1]]).addTo(map);
             searchInput.value = '';
