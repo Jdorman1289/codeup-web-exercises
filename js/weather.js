@@ -18,7 +18,6 @@
     const Day3 = document.querySelector('.day3');
     const Day4 = document.querySelector('.day4');
     const Day5 = document.querySelector('.day5');
-    let mapDiv = document.querySelector("iframe");
     const searchInput = document.querySelector('input');
     let forecastLocationName = document.querySelector('#forecastName');
     forecastLocationName.innerText = `San Antonio, Texas`
