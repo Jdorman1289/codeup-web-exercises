@@ -277,28 +277,24 @@
     //         </div>
     //     `;
     // }
-    //
+
     // console.log(buildWeatherPanel(data));
 
     // ============== MINI EXERCISE 4
 
     // TODO: Refactor the following code to use ES6 syntax. The output should stay the same.
     // consider how property values are added to the object and then used in the function
-
-    function printAuthDetails(user) {
-        console.log(`The username is ${user.username}`);
-        console.log(`The email is ${user.email}`);
-    }
-
     const email = prompt('Enter an email address');
     const username = prompt('Enter an a username');
     const password = prompt('Enter a password');
 
     const user = {
-        email: email,
-        username: username,
-        password: password
+        email,
+        username,
+        password,
     };
+
+    const printAuthDetails = ({username, email}) => console.log(`The username is ${username}\nThe email is ${email}`);
 
     printAuthDetails(user);
 
