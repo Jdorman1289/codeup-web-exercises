@@ -84,13 +84,10 @@
     // TODO: Refactor the following code to use ES6 syntax. The output should stay the same.
     // consider the type of loop, concatenation and how variables are declared
 
-    let message = '';
-    let names = ['John', 'Paul', 'George', 'Ringo'];
-    for (let name of names) {
-        message += `Hello, ${name}\n`;
+    let names = ['John', 'Paul', 'George', 'Ringo'], message = names.reduce((message, name) => message + `Hello, ${name}\n`, '');
 
-    }
     console.log(message);
+
 
     // ============== MINI EXERCISE 3
 
@@ -299,6 +296,6 @@
     printAuthDetails(user);
 
 </script>
-
+<script src="js/es6.js"></script>
 </body>
 </html>
