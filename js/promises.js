@@ -15,6 +15,6 @@ fetch(url, apiOptions).then((response) => {
     // console.log(data);
 
     document.querySelector('#user-image').innerHTML = `<img = src="${data[0].actor.avatar_url}" alt="user profile image">`
-    document.querySelector('p').innerHTML = `The last push was to ${data[0].repo.name} at ${data[0].created_at}`
+    document.querySelector('p').innerHTML = `Their last push was to ${data[0].repo.name} at ${data[0].created_at}`
 
 })
