@@ -50,7 +50,7 @@ longestEmail = longestEmail.reduce((champ, amount) => (amount >= champ) ? champ 
 let answer = users.filter(user => user.email.length >= longestEmail);
 console.log(answer);
 
-let nameStr = users.reduce((userStr, user) => (user === users[users.length - 1]) ? userStr += `${user.name}. ` : userStr += `${user.name}, `, "Your instructors are: ");
+let nameStr = users.reduce((userStr, user) => (user === users[users.length - 1]) ? userStr + `${user.name}. ` : userStr + `${user.name}, `, "Your instructors are: ");
 console.log(nameStr);
 
 
