@@ -13,6 +13,8 @@ fetch(url, apiOptions).then((response) => {
     return response.json()
 }).then(data => {
     // console.log(data);
-    console.log(`The last push date from that user is: ${data[0].created_at}`);
+
+    document.querySelector('#user-image').innerHTML = `<img = src="${data[0].actor.avatar_url}" alt="user profile image">`
+    document.querySelector('p').innerHTML = `The last push was to ${data[0].repo.name} at ${data[0].created_at}`
 
 })
