@@ -46,7 +46,7 @@ let avgUserExp = users.reduce((exp, user) => exp + user.yearsOfExperience, 0) / 
 console.log(avgUserExp);
 
 let longestEmail = users.map(user => user.email.length);
-longestEmail = longestEmail.reduce((champ, amount) => (amount >= champ) ? champ = amount : champ, 0)
+longestEmail = longestEmail.reduce((champ, amount) => (amount >= champ) ? amount : champ, 0)
 let answer = users.filter(user => user.email.length >= longestEmail);
 console.log(answer);
 
