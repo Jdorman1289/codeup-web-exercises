@@ -45,6 +45,13 @@ console.log(userEmails);
 let avgUserExp = users.reduce((exp, user) => exp + user.yearsOfExperience, 0) / users.length;
 console.log(avgUserExp);
 
-//refactor to return the email not the length
-let longestEmail = users.reduce((longestEmail, user) => (user.email.length > longestEmail) ? user.email.length + longestEmail : longestEmail , 0);
-console.log(longestEmail);
+let longestEmail = users.map(user => user.email.length);
+longestEmail = longestEmail.reduce((champ, amount) => (amount >= champ) ? champ = amount : champ, 0)
+let answer = users.filter(user => user.email.length >= longestEmail);
+console.log(answer);
+
+let nameStr = users.reduce((userStr, user) => (user === users[users.length - 1]) ? userStr += `${user.name}. ` : userStr += `${user.name}, `, "Your instructors are: ");
+console.log(nameStr);
+
+
+
