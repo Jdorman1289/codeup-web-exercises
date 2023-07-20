@@ -284,30 +284,30 @@
 // that takes in an array of numbers and returns the average
 
 
-// // Input:
-// const runners = [
-//     {name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1]},
-//     {name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9]},
-//     {name: "Charlie", age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5]},
-//     {name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3]},
-//     {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
-// ];
+// Input:
+const runners = [
+    {name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1]},
+    {name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9]},
+    {name: "Charlie", age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5]},
+    {name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3]},
+    {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
+];
+
+// function getTopRunners(runners) {
+//     let champTime = 0;
+//     let answer = {}
+//     runners.forEach(runner => {
+//         let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0) / runner.lapTimes.length;
+//         if (newNum > champTime) {
+//             champTime = newNum;
+//             answer = runner;
+//         }
+//     })
+//     return answer;
 //
-// // function getTopRunners(runners) {
-// //     let champTime = 0;
-// //     let answer = {}
-// //     runners.forEach(runner => {
-// //         let newNum = runner.lapTimes.reduce((sumOfItems, current) => sumOfItems + current, 0) / runner.lapTimes.length;
-// //         if (newNum > champTime) {
-// //             champTime = newNum;
-// //             answer = runner;
-// //         }
-// //     })
-// //     return answer;
-// //
-// // }
-// //
-// const getTopRunners = runners => runners.reduce((champ, runner) => (avgLapTime = runner.lapTimes.reduce((sum, time) => sum + time, 0) / runner.lapTimes.length, (champ.avgLapTime || 0) < avgLapTime ? { ...runner, avgLapTime } : champ), {});
+// }
+//
+const getTopRunners = runners => runners.reduce((champ, runner) => (avgLapTime = runner.lapTimes.reduce((sum, time) => sum + time, 0) / runner.lapTimes.length, (champ.avgLapTime || 0) < avgLapTime ? { ...runner, avgLapTime } : champ), {});
 //
 // console.log(getTopRunners(runners));
 //
