@@ -1,4 +1,4 @@
-let userName = prompt('what username?')
+let userName = prompt('which GitHub username?')
 
 let url = `https://api.github.com/users/${userName}/events/public`;
 let apiOptions = {
