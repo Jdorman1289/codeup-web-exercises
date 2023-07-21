@@ -36,18 +36,23 @@
 // })()
 
 const getUser = async userName => {
-    let url = `https://api.github.com/users/${userName}/events/public`;
-    let apiOptions = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'authorization': `token ${GITHUB_MONTH_KEY}`
+    try {
+        let url = `https://api.github.com/users/${userName}/events/public`;
+        let apiOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `token ${GITHUB_MONTH_KEY}`
+            }
         }
-    }
 
-    const response = await fetch(url, apiOptions);
-    return await response.json();
+        const response = await fetch(url, apiOptions);
+        return await response.json();
+    } catch (error) {
+        console.log(error.message);
+    }
 }
+
 
 (() => {
 
