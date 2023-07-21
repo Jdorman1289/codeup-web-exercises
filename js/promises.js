@@ -54,11 +54,11 @@ const getUser = async userName => {
     document.querySelector('button').addEventListener('click', async () => {
             let userName = document.querySelector('input').value;
 
-            const userToDisplay = await getUser(userName)
+            const userToDisplay = await getUser(userName);
             let pushEvents = userToDisplay.filter(event => event.type === "PushEvent");
 
-            document.querySelector('#user-image').innerHTML = `<img class="rounded-pill" width="200px" src="${userToDisplay[0].actor.avatar_url}" alt="user profile image">`
-            document.querySelector('span').innerHTML = `Their last push was to this repo: ${pushEvents[0].repo.name} at this time: ${pushEvents[0].created_at}`
+            document.querySelector('#user-image').innerHTML = `<img class="rounded-pill" width="200px" src="${userToDisplay[0].actor.avatar_url}" alt="user profile image">`;
+            document.querySelector('span').innerHTML = `Their last push was to this repo: ${pushEvents[0].repo.name} at this time: ${pushEvents[0].created_at}`;
 
         }
     )
