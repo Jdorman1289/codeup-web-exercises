@@ -285,13 +285,13 @@
 
 
 // Input:
-const runners = [
-    {name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1]},
-    {name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9]},
-    {name: "Charlie", age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5]},
-    {name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3]},
-    {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
-];
+// const runners = [
+//     {name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1]},
+//     {name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9]},
+//     {name: "Charlie", age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5]},
+//     {name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3]},
+//     {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
+// ];
 
 // function getTopRunners(runners) {
 //     let champTime = 0;
@@ -307,7 +307,7 @@ const runners = [
 //
 // }
 //
-const getTopRunners = runners => runners.reduce((champ, runner) => (avgLapTime = runner.lapTimes.reduce((sum, time) => sum + time, 0) / runner.lapTimes.length, (champ.avgLapTime || 0) < avgLapTime ? { ...runner, avgLapTime } : champ), {});
+// const getTopRunners = runners => runners.reduce((champ, runner) => (avgLapTime = runner.lapTimes.reduce((sum, time) => sum + time, 0) / runner.lapTimes.length, (champ.avgLapTime || 0) < avgLapTime ? { ...runner, avgLapTime } : champ), {});
 //
 // console.log(getTopRunners(runners));
 //
@@ -562,17 +562,28 @@ const getTopRunners = runners => runners.reduce((champ, runner) => (avgLapTime =
 //         }
 //     })
 //     return oddArr;
-// }
+// // }
+//
+// let thisOne = [1, 3, 2, 13, 74, 33];
+// // [1, 3, 13, 33];
+// let thatOne = [62, 3, 2, 8, 531, 7];
+// // Expected Output: [3, 531, 7]
+//
+//
+// const removeEvens = someArr => (!Array.isArray(someArr)) || (!parseInt(someArr)) ? false : someArr.filter(value => value % 2 === 1);
+//
+// console.log(removeEvens(thisOne));
+// console.log(removeEvens(thatOne));
+// console.log(removeEvens("check"));
+// console.log(removeEvens(["c","b"]));
 
-let thisOne = [1, 3, 2, 13, 74, 33];
-// [1, 3, 13, 33];
-let thatOne = [62, 3, 2, 8, 531, 7];
-// Expected Output: [3, 531, 7]
+const printTree = () => {
+    let treeHeight = 10;
+    for (let i = 0; i < treeHeight; i++) {
+        let space = ' '.repeat(treeHeight - i - 1);
+        let hash = '#'.repeat(2 * i + 1);
+        console.log(space + hash + space);
+    }
+}
 
-
-const removeEvens = someArr => (!Array.isArray(someArr)) || (!parseInt(someArr)) ? false : someArr.filter(value => value % 2 === 1);
-
-console.log(removeEvens(thisOne));
-console.log(removeEvens(thatOne));
-console.log(removeEvens("check"));
-console.log(removeEvens(["c","b"]));
+printTree();
